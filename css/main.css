@@ -1,0 +1,69 @@
+/* 
+    Created on : 25 juin 2018, 15:53:14
+    Author     : Antoine
+*/
+
+body {
+  padding-top: 51px;
+}
+
+#main{
+    padding-top: 20px;
+    bo
+}
+.col-xs-12 {
+  background-color: #fff;
+}
+.navbar h1{
+    margin-top:  7px;
+    font-family: verdana;
+    font-size: 26px;
+}
+#sidebar {
+  height: 100%;
+  padding-right: 1px;
+  padding-top: 20px;
+}
+#sidebar .nav {
+  width: 95%;
+  border: 1px solid blue;
+}
+#sidebar input {
+  border:0 #f2f2f2 solid;
+  margin-bottom: 1px;
+  border-bottom-width:1px;
+}
+
+/* collapsed sidebar styles */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -41.6%;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -41.6%;
+  }
+  .row-offcanvas-right.active {
+    right: 41.6%;
+  }
+  .row-offcanvas-left.active {
+    left: 41.6%;
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 41.6%;
+  }
+  #sidebar {
+    padding-top:0;
+  }
+}
+
