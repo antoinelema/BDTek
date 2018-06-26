@@ -4,8 +4,6 @@
  * 
  */
 ?>
-
-
                 <!-- main area -->
 
                 <section id="main" class="col-xs-12 col-sm-9">
@@ -22,7 +20,7 @@
                         </div>
                         <div id="slider" class="row">
                             <div class="col-xs-12">
-                                <!--images bdtek-->
+                                
                                 <!-- Carousel -->
                                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -56,7 +54,7 @@
                     $nbImg ++;
                     
                     ?>
-                                        <a href=""><img src=<?php  echo 'images/'.$img_directory[$y].' alt="img"'; ?> class="col-sm-3 img-thumbnail" /></a>
+                                        <a class="imgCar col-sm-3 img-thumbnail" href=""><img src=<?php  echo 'images/'.$img_directory[$y].' alt="img"'; ?> class="" /></a>
                 <?php
                     
                      if ((($y)-2)%6 == 0){

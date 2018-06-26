@@ -3,8 +3,9 @@
     Author     : Antoine
 */
 
+
 body{
-    background-color: blue;
+    
 }
 
 .col-xs-12 {
@@ -26,7 +27,7 @@ nav{
 
 /*sidebare*/
 #sidebar {
-    border: 1px solid blue;
+  border: 1px solid blue;
   height: 100%;
   padding-right: 1px;
   padding-top: 20px;
@@ -47,6 +48,37 @@ nav{
     border: 1px solid blue;
 }
 
+#main, #myCarousel{
+    background-color: darkcyan;
+}
+ /*carousel*/
+ #myCarousel{
+    height: 650px;
+ }
+ #myCarousel .carousel-item{
+     padding: 2%;
+     margin-left: 11%;
+     
+ }
+ #myCarousel .imgCar{
+     display: inline-block;
+     width:  30%;
+     height: 250px;
+     margin : 5px;
+     padding: 5px;
+     background-color: white;
+     border: 1px solid lightgray;
+     overflow: hidden;
+ }
+ 
+ #myCarousel .imgCar:hover{
+     
+ }
+ 
+ #myCarousel a img{
+    width: 100%;
+ }
+ 
 .btnCar {
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
@@ -66,6 +98,7 @@ nav{
   text-decoration: none;
 }
 
+    /*fin carousel*/
 
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {
