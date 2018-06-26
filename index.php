@@ -1,13 +1,15 @@
 <?php
 
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *
  */
     $action ='accueil';
     
     //recuperation des parametres
+    //img
+    $directory = 'images';
+    $img_directory = array_diff(scandir($directory), array('..', '.','Thumbs.db'));
+    
     
     //etapes et traitements
     switch ($action){

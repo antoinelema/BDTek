@@ -3,23 +3,30 @@
     Author     : Antoine
 */
 
-body {
-  padding-top: 51px;
+body{
+    background-color: blue;
 }
 
-#main{
-    padding-top: 20px;
-    bo
-}
 .col-xs-12 {
   background-color: #fff;
 }
+
+/*navbar top*/
+nav{
+    border: 1px solid blue;
+}
+
 .navbar h1{
     margin-top:  7px;
     font-family: verdana;
     font-size: 26px;
 }
+
+
+
+/*sidebare*/
 #sidebar {
+    border: 1px solid blue;
   height: 100%;
   padding-right: 1px;
   padding-top: 20px;
@@ -33,6 +40,32 @@ body {
   margin-bottom: 1px;
   border-bottom-width:1px;
 }
+
+ /*centre*/
+#main{
+    padding-top: 20px;
+    border: 1px solid blue;
+}
+
+.btnCar {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  -webkit-box-shadow: 5px 6px 11px #666666;
+  -moz-box-shadow: 5px 6px 11px #666666;
+  box-shadow: 5px 6px 11px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 31px;
+  background: #a8a8a8;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+.btnCar:hover {
+  background: #949494;
+  text-decoration: none;
+}
+
 
 /* collapsed sidebar styles */
 @media screen and (max-width: 767px) {
