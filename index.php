@@ -6,9 +6,11 @@
     $action ='accueil';
     
     //recuperation des parametres
+    $tParams = parse_ini_file('param/param.ini');
+    $DEBUG = $tParams['debug'];
+    $cheminImages = $tParams['cheminImages'];
     //img
-    $directory = 'images';
-    $img_directory = array_diff(scandir($directory), array('..', '.','Thumbs.db'));
+    $img_directory = array_diff(scandir($cheminImages), array('..', '.','Thumbs.db'));
     
     
     //etapes et traitements

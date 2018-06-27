@@ -27,7 +27,9 @@ nav{
 
 /*sidebare*/
 #sidebar {
-  border: 1px solid blue;
+  
+  background-color: lightblue;
+  border-radius: 10px;
   height: 100%;
   padding-right: 1px;
   padding-top: 20px;
@@ -37,9 +39,7 @@ nav{
   border: 1px solid blue;
 }
 #sidebar input {
-  border:0 #f2f2f2 solid;
-  margin-bottom: 1px;
-  border-bottom-width:1px;
+    margin: 1%;
 }
 
  /*centre*/
@@ -71,8 +71,23 @@ nav{
      overflow: hidden;
  }
  
- #myCarousel .imgCar:hover{
-     
+ /* overlay */
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+ #myCarousel .imgCar:hover .overlay{
+     opacity: 1;
  }
  
  #myCarousel a img{

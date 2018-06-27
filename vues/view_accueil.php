@@ -36,7 +36,7 @@
                                 ?>
     </ol>
                                 
-                                <!-- The slideshow -->
+                                <!-- slider -->
                                 <div class="carousel-inner" role="listbox">
                                   
                 <?php
@@ -54,7 +54,10 @@
                     $nbImg ++;
                     
                     ?>
-                                        <a class="imgCar col-sm-3 img-thumbnail" href=""><img src=<?php  echo 'images/'.$img_directory[$y].' alt="img"'; ?> class="" /></a>
+                                        <div class="imgCar col-sm-3 ">
+                                            <a class="" href=""><img src=<?php  echo $cheminImages.$img_directory[$y].' id="'.$img_directory[$y].'" alt="img"'; ?> class="" /></a>
+                                            <div class="overlay"><?php echo $img_directory[$y]; ?></div> <!-- Rendre dynamique avec le nom de la bd (class?) -->
+                                        </div>
                 <?php
                     
                      if ((($y)-2)%6 == 0){
@@ -67,7 +70,7 @@
                                   </div>
                                 
 
-                                <!-- Carousel Controls -->
+                                <!-- Controls du Carousel -->
                                 <a id="ctrlPrev" class="carousel-control-prev" href="#myCarousel" data-slide="prev">
                                   <span class="btnCar"><</span>
                                 </a>
