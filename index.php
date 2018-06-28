@@ -16,6 +16,7 @@
    
     //img
     $tImage = array_diff(scandir($cheminImages), array('..', '.','Thumbs.db'));
+    $tImage = ;
     
         
     //etapes et traitements
