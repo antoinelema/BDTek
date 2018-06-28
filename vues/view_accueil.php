@@ -27,7 +27,7 @@
                                 <!-- Carousel Indicators -->
                                     <ol class="carousel-indicators">
                                 <?php
-                                $nbLivre = (count($img_directory))/6;
+                                $nbLivre = (count($tImage))/6;
                                 for ($i = 0;$i < $nbLivre; $i++){
                                 ?>
         <li data-target="#myCarousel" data-slide-to="<?php echo $i;?>"<?php  if ($i==0) echo ' class="active"';?>></li>
@@ -43,7 +43,7 @@
                 $nbImg = 0;
 //                var_dump($img_directory);
                 
-                for ($y = 2;$y < count($img_directory)+2; $y++){ //a changer peu dynamique
+                for ($y = 2;$y < count($tImage)+2; $y++){ //a changer peu dynamique
 //                    print_r($y);
                     if ((($y)-2)%6 == 0){                  
                     ?>
@@ -55,8 +55,8 @@
                     
                     ?>
                                         <div class="imgCar col-sm-3 ">
-                                            <a class="" href=""><img src=<?php  echo $cheminImages.$img_directory[$y].' id="'.$img_directory[$y].'" alt="img"'; ?> class="" /></a>
-                                            <div class="overlay"><?php echo $img_directory[$y]; ?></div> <!-- Rendre dynamique avec le nom de la bd (class?) -->
+                                            <a class="" href=""><img src=<?php  echo $cheminImages.$tImage[$y].' id="'.$tImage[$y].'" alt="img"'; ?> class="" /></a>
+                                            <div class="overlay"><?php echo $tImage[$y]; ?></div> <!-- Rendre dynamique avec le nom de la bd (class?) -->
                                         </div>
                 <?php
                     
