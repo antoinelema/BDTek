@@ -5,18 +5,23 @@
  */
     $action ='accueil';
     //include 
-    require 'dao/connectionManager.dao.php';
-    require 'dao/Bdmanager.dao.php';
+    require 'DAO/ConnectionManager.dao.php';
+    require 'DAO/BdManager.dao.php';
     require 'modele/model.inc.php';
      //recuperation des parametres
     $tParams = parse_ini_file('param/param.ini');
     $DEBUG = $tParams['debug'];
     $cheminImages = $tParams['cheminImages'];
-     getAllOBd();
+//    getAllImgLocation();
+    
+    
    
     //img
-    $tImage = array_diff(scandir($cheminImages), array('..', '.','Thumbs.db'));
-    $tImage = ;
+//   $tImage = array_diff(scandir($cheminImages), array('..', '.','Thumbs.db'));
+     BdManager::getAllOBd();
+
+//   var_dump($tImage);
+   
     
         
     //etapes et traitements

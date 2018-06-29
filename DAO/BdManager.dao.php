@@ -1,9 +1,4 @@
 <?php
-
-/* 
- *
- */
-
 class BdManager {
     
     static function getAllBd(){
@@ -25,7 +20,7 @@ class BdManager {
     }
     
     static function getOneBd($idBd){
-        
+         
         //conexion
         $conexion = ConnectionManager::conexion();
         
@@ -48,6 +43,7 @@ class BdManager {
     }
     
     static function getOneBdTheme($idBd){
+         $tThemes[] = 'pas de theme';       
         // -- recup themes bd --
         $sqlTheme =  "SELECT th_intitule 'theme' ".
                     'FROM bandesdessinees as bd '.
@@ -68,9 +64,40 @@ class BdManager {
         // execute statement
         $rs->execute(array($idBd));
         
-        //close connection
+//        //close connection
         unset($conexion);
+        
+        $records = $rs->fetchAll(); // on lit tout ;
+        foreach ($records as $ligne) {
+//            var_dump($ligne);
+            extract($ligne);
+            $tThemes[] = $theme;
+        }
+        
+        var_dump($tThemes);
     }
+    
+    static function getAllOBd(){
+        $tbd = array();
+
+        try {
+            $resultat = BdManager::getAllBd();
+            $record = $resultat -> fetchall();
+
+            for ($record as $ligne) {
+                extract($ligne);
+                $bd = new BD($bd_Id, $auteur, $bdImg, $bdResume, $titre);
+                $bd->setBdThemes(BdManager::getOneBdTheme($bd_Id));
+                $tbd[]=$bd;
+            }
+
+        } catch (Exception $ex) {
+
+            echo($ex->getMessage());
+        }
+        return $tbd;
+    }
+    
+    
         
 }
-
