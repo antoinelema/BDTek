@@ -9,12 +9,12 @@ class ConnectionManager{
    
     
     static function conexion(){
-        $tParams = parse_ini_file('param/param.ini');
-        $PARAM_hote = $tParams['hote'];
-        $PARAM_port = $tParams['port'];
-        $PARAM_nomBDD = $tParams['nom_bdd'];
-        $PARAM_user = $tParams['utilisateur'];
-        $PARAM_mdp = $tParams['mot_passe'];
+        if (file_exists('param/param.php')){
+            require 'param/param.php';
+        }else{
+            require '../param/param.php';  
+        }
+              
         
         
         $PARAM_dsn = 'mysql:host='.$PARAM_hote.'; dbname='.$PARAM_nomBDD.'; charset=utf8';

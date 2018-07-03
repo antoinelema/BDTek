@@ -8,9 +8,10 @@ body{
     
 }
 
-.col-xs-12 {
-  background-color: #fff;
+#main {
+    color: white;
 }
+
 
 /*navbar top*/
 nav{
@@ -41,19 +42,27 @@ nav{
 #sidebar input {
     margin: 1%;
 }
+#badPassword{
+    color: red;
+    text-align: center;
+}
 
  /*centre*/
 #main{
     padding-top: 20px;
-    border: 1px solid blue;
+/*    border: 1px solid blue;*/
 }
 
 #main, #myCarousel{
     background-color: darkcyan;
 }
+/*vue accueil*/
+.formImg{
+    display: inline;
+}
  /*carousel*/
  #myCarousel{
-    height: 650px;
+    /*height: 870px;*/
  }
  #myCarousel .carousel-item{
      padding: 2%;
@@ -63,7 +72,7 @@ nav{
  #myCarousel .imgCar{
      display: inline-block;
      width:  30%;
-     height: 250px;
+     height: 370px;
      margin : 5px;
      padding: 5px;
      background-color: white;
@@ -76,7 +85,7 @@ nav{
   position: absolute; 
   bottom: 0; 
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  background: rgba(0, 0, 0, 0.5); 
   color: #f1f1f1; 
   width: 100%;
   transition: .5s ease;
@@ -92,6 +101,13 @@ nav{
  
  #myCarousel a img{
     width: 100%;
+ }
+ 
+ .formPost{
+     margin: 0.7%;
+ }
+ #postComm text{
+     margin: 30%;
  }
  
 .btnCar {
@@ -112,39 +128,81 @@ nav{
   background: #949494;
   text-decoration: none;
 }
-
     /*fin carousel*/
 
-/* collapsed sidebar styles */
-@media screen and (max-width: 767px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-  }
-  .row-offcanvas-right
-  .sidebar-offcanvas {
-    right: -41.6%;
-  }
+    /*vue bd*/
+#postComm label{
+        font-size: 15px;
+    }
+ /*commentaires*/
+ .commentaire{
+     margin-left: 1%;
+ }
+ 
+ .media-body p{
+     font-size: 16px;
+     color: darkslategray;
+ }
+ 
+ .commentaire h4,.commentaire h5{
+     color: darkslategray;
+ }
 
-  .row-offcanvas-left
-  .sidebar-offcanvas {
-    left: -41.6%;
-  }
-  .row-offcanvas-right.active {
-    right: 41.6%;
-  }
-  .row-offcanvas-left.active {
-    left: 41.6%;
-  }
-  .sidebar-offcanvas {
+.comment-box img {
+    width: 50px;
+    height: 50px;
+}
+
+.comment-box .media-left {
+    padding-right: 10px;
+    width: 65px;
+}
+.comment-box .media-body p {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.comment-box .media-body .media p {
+    margin-bottom: 0;
+}
+.comment-box .media-heading {
+    background-color: lightgrey;
+    border: 1px solid #ddd;
+    padding: 7px 10px;
+    position: relative;
+    margin-bottom: -1px;
+}
+.comment-box .media-heading:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: lightgrey;
+    border: 1px solid #ddd;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
     position: absolute;
-    top: 0;
-    width: 41.6%;
-  }
-  #sidebar {
-    padding-top:0;
-  }
+    top: 10px;
+    left: -6px;
+}
+
+.insertcom{
+    border: 1px solid white;
+}
+ /*fin commentaires*/
+ #postComm{
+     margin-left: 1%;
+ }
+@media screen and (max-width: 1210px) {
+    #imgConsultation{
+        
+        width: 100%;
+    }
+}
+/* collapsed sidebar styles */
+@media screen and (max-width: 580px) {
+    #sidebar{
+        display: none;
+    }
 }
 

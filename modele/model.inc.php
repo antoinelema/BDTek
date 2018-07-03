@@ -2,10 +2,16 @@
 /* 
  * 
  */
-require 'objet/BD.class.php';
 
 
 
-function getAllImgLocation(){
-    $tbd = getAllOBd();
+
+function deserialise($serialisedO){
+
+    $encodedO = stripslashes(urldecode($serialisedO));
+    //var_dump($encodeObd);
+
+    $o = unserialize($encodedO);
+    
+    return $o;
 }

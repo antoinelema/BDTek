@@ -26,7 +26,7 @@
             <span class="navbar-brand mb-0 h1">Navbar</span>
         </nav>
 
-        <div class="container">
+        <div class="container-fluid">
           <div class="row row-offcanvas row-offcanvas-left">
                     
             <?php if ($action != 'admin')
