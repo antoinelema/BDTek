@@ -11,6 +11,7 @@ class Commentaire{
     private $com_date;
     private $com_auteur;
     private $com_texte;
+    private $publie;
     
     function __construct($com_bd_id, $com_auteur, $com_texte, $com_id = null, $com_date = null) {
         $this->com_id = $com_id;
