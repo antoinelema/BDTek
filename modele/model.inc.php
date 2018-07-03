@@ -51,8 +51,8 @@ function conexion($post,$login,$password){
  * deconexion de la session en cour
  */
 function deconexion(){
-        session_unset();
-        session_destroy();
+    session_unset();
+    session_destroy();
 }
 
 /**

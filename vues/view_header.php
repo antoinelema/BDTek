@@ -23,9 +23,11 @@
   
         <!-- top navbar -->
         <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1">Navbar</span>
+            <a href="index.php" >
+                <img src="src/img/livre.png" alt="accueil" data-toggle="tooltip" title="Retour à l'accueil"/>
+            </a>
         </nav>
-
+        
         <div class="container-fluid">
           <div class="row row-offcanvas row-offcanvas-left">
                     

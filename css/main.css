@@ -23,7 +23,9 @@ nav{
     font-family: verdana;
     font-size: 26px;
 }
-
+.navbar  img{
+  width: 28%;  
+}
 
 
 /*sidebare*/

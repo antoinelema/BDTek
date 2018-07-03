@@ -20,7 +20,7 @@
                             </div>
                         </div>    
                     </form>
-                    <form action="<?php urlSansGet() ?>" method="POST">
+                    <form action="vues/pagedeco" method="POST">
                         <div class="form-row">
                             <div class="col-11">
                                 <input type="hidden" name="conexion" value="deco" />

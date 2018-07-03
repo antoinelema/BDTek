@@ -19,40 +19,15 @@ $serializeObd = $_GET['oBd'];
 $obd = deserialise($serializeObd);
 $oComToInsert = new Commentaire($obd->getBd_Id(), $compseudo, $comTexte);
 
-header('Refresh: 2; ../index.php?action=afficheBD&oBd='.urlencode($serializeObd));
+
 
 try {
-    $insert = TRUE;
+    $insert = 1;
     CommentairesManager::insertCom($oComToInsert);
 } catch (Exception $ex) {
     echo $ex;
-    $insert = FALSE;
+    $insert = 0;
 }
-?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Insert Message</title>
-  </head>
-  <body>
-    <?php
-      if (isset($insert)){
 
-        if($insert == TRUE){
-        ?>
-        <div>
-            <p> Votre Commentaire a été pris en compte. Il maintenant est en attente de moderation. (Délais de 3 à 10 jours ouvrés.)</p>
-        </div>
-        <?php
-        } else {
-        ?>
-        <div>
-            <p>Une erreur est survenue, votre Commentaire n'a pas été pris en compte.</p>
-        </div>
-        <?php 
-        }
-    }
-    ?>
-  </body>
-</html>
+header('Location: ../index.php?action=afficheBD&insert='.$insert.'&oBd='.urlencode($serializeObd));
+

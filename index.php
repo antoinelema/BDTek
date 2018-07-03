@@ -1,41 +1,53 @@
 <?php
 
 /* 
- *
+ *Index du site, determine quelle fenetre afficher
  */
-    $action ='accueil';
-    if (isset($_GET['action'])){
-        $action = $_GET['action'];
-//        var_dump($_GET);
-    }
-    if (isset($_POST['action'])){
-        $action = $_POST['action'];
-        
-    }
-    session_start();
-    //include 
+    //recuperation des parametres
+     require 'param/param.php';
+     
+     //include 
     require 'DAO/ConnectionManager.dao.php';
     require 'DAO/BdManager.dao.php';
     require 'modele/model.inc.php';
     require 'DAO/CommentairesManager.dao.php';
     require 'objet/BD.class.php';
     require 'objet/Commentaire.class.php';
-    
-     //recuperation des parametres
-     require 'param/param.php';
-    
+     
+     session_start();
+
+     if ($DEBUG){
+       echo 'var dump de $_GET:';
+       var_dump($_GET);
+       
+       echo 'var dump de $_POST:';
+       var_dump($_POST);
+       
+       echo 'var dump de $_SESSION:';
+       var_dump($_SESSION);
+     }
+     
+    $action ='accueil';
+    if (isset($_GET['action'])){
+        $action = $_GET['action'];
+
+    }
+    if (isset($_POST['action'])){
+        $action = $_POST['action'];
+        
+    }
+       
     //img
      $tOBds = BdManager::getAllOBd(); //tableau d'objet bd
 
 //   var_dump($tOBds);
-//         var_dump($_POST);
+     
+     
+     
      if (isset($_POST)){
          if (isset($_POST['conexion'])){
              if (($_POST['conexion']== 'conexion')){
                   $badpassword = conexion($_POST,$login,$password);
-             }else{
-                 deconexion();
-                 
              }
          }
      }

@@ -83,6 +83,24 @@ $tThemes = $oBd->getBdThemes();
                                     <form name="postCom" action="vues/pageInsertOk">
                                     
                                         <h3>Postez votre commentaire</h3>
+                                        <?php
+                                          if (isset($_GET['insert'])){
+                                            $insert = $_GET['insert'];
+                                            if($insert == 1){
+                                            ?>
+                                            <div>
+                                                <p> Votre Commentaire a été pris en compte. Il maintenant est en attente de moderation. (Délais de 3 à 10 jours ouvrés.)</p>
+                                            </div>
+                                            <?php
+                                            } else {
+                                            ?>
+                                            <div>
+                                                <p>Une erreur est survenue, votre Commentaire n'a pas été pris en compte.</p>
+                                            </div>
+                                            <?php 
+                                            }
+                                        } 
+                                        ?>
                                         <div class="row">
                                             <div class="col-2">
                                                 <label for="pesudo" class="label">Votre pseudo</label>
