@@ -13,12 +13,13 @@ class Commentaire{
     private $com_texte;
     private $publie;
     
-    function __construct($com_bd_id, $com_auteur, $com_texte, $com_id = null, $com_date = null) {
+    function __construct($com_bd_id, $com_auteur, $com_texte, $com_id = null, $com_date = null,$publie = null) {
         $this->com_id = $com_id;
         $this->com_bd_id = $com_bd_id;
         $this->com_date = $com_date;
         $this->com_auteur = $com_auteur;
         $this->com_texte = $com_texte;
+        $this->publie = $publie;
     }
     
     function getCom_id() {
@@ -41,7 +42,15 @@ class Commentaire{
         return $this->com_texte;
     }
 
-    
+    function getPublie() {
+        return $this->publie;
+    }
+
+    function setCom_texte($com_texte) {
+        $this->com_texte = $com_texte;
+    }
+
+
 
 
 }

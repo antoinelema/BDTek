@@ -3,6 +3,8 @@
 /* 
  * affiche l'authentification sur le coté gauche.
  */
+
+
 ?>
     <!-- sidebar -->
                
@@ -12,6 +14,15 @@
                     if (isset($_SESSION) && (isset($_SESSION['adminCo']))){
                     ?>
                     <h3>Bonjour</h3>
+                    <div>
+                        <?php
+                        if (count($tComsUnpublished)>0){
+                        ?>
+                        <p>Vous avez <?php echo count($tComsUnpublished); ?> commentaire(s) en attente de moderation.</p>
+                        <?php
+                        }
+                        ?>
+                    </div>
                     <form action="<?php $_PHP_SELF ?>" method="POST" id="goToAdmin">
                         <div class="form-row">
                             <div class="col-11">
@@ -20,7 +31,7 @@
                             </div>
                         </div>    
                     </form>
-                    <form action="vues/pagedeco" method="POST">
+                    <form action="vues/pagedeco.php" method="POST">
                         <div class="form-row">
                             <div class="col-11">
                                 <input type="hidden" name="conexion" value="deco" />
@@ -28,7 +39,7 @@
                                 <input type="submit" class="btn btn-primary form-control" value="Deconexion" />
                             </div>
                         </div>
-                            
+                        
                     </form>
                     <?php 
                     }else{

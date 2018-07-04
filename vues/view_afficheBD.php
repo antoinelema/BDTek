@@ -8,8 +8,10 @@ $serializeObd = $_GET['oBd'];
 $oBd = deserialise($serializeObd);
 
 //get des commentaires
-$tComs = CommentairesManager::getAllOComFromABd($oBd->getBd_Id());
-//var_dump(count($tComs));
+$tComs = CommentairesManager::getAllOComFromABd($oBd->getBd_Id()); //tout les coms
+$tcomsV = ComsValid($tComs); //array de tout les coms validé
+
+//var_dump($tComs);
 
 $tThemes = $oBd->getBdThemes();
 //var_dump($tThemes);
@@ -49,13 +51,13 @@ $tThemes = $oBd->getBdThemes();
                                 <h3>Commentaires</h3>
                                 <div id="allCom">
                                 <?php
-                                if (count($tComs)==0){
+                                if (count($tcomsV)==0){
                                     ?>
                                     <p>Pas encore de commentaire. Soyez le 1er à en poster un !</p>
                                     <?php                                    
                                 }else{
-                                    for($i=0; $i< count($tComs);$i++) {
-                                        $com = $tComs[$i];
+                                    for($i=0; $i< count($tcomsV);$i++) {
+                                        $com = $tcomsV[$i];
                                     ?>
                                     <div class="commentaire row">
                                         <div class="media comment-box">
@@ -80,7 +82,7 @@ $tThemes = $oBd->getBdThemes();
                                 </div>
                             
                                 <div id="postComm" class="row-form" >
-                                    <form name="postCom" action="vues/pageInsertOk">
+                                    <form name="postCom" action="vues/pageInsertOk.php">
                                     
                                         <h3>Postez votre commentaire</h3>
                                         <?php

@@ -48,7 +48,7 @@ function conexion($post,$login,$password){
 }
 
 /**
- * deconexion de la session en cour
+ * deconexion de la session admin
  */
 function deconexion(){
     session_unset();
@@ -63,4 +63,40 @@ function urlSansGet(){
   $urlCourante=$_SERVER["REQUEST_URI"];
   $urlGet = explode("?",$urlCourante);
   return  $urlGet[0];
+}
+
+/**
+ * cherche les commentaires valide dans un tableau de commentaires
+ * @param array $tComs de tout les coms
+ * @return array de coms validé
+ */
+function ComsValid($tComs){
+    $tComsV = array();
+    foreach ($tComs as $oCom){
+        if ($oCom->getPublie()=='v'){
+            $tComsV[]=$oCom;
+        }
+    }
+    return $tComsV;
+}
+
+/**
+ * update un commentaire ou le delete en fonction de la variable reçu
+ * return un boolean pour savoir si commentaire a été delete ou update
+ */
+function insertOrModifCom($postOCom){
+//    var_dump($postOCom);
+    $deleted = FALSE;
+    $serializeOCom = $postOCom['oCom'];
+    $oCom = deserialise($serializeOCom);
+    if(isset($postOCom['insert'])){
+         if ($postOCom['insert']=='valider'){
+             $oCom->setCom_texte($postOCom['texte']);
+             CommentairesManager::updateCom($oCom);
+         }else{
+             CommentairesManager::deleteCom($oCom);
+             $deleted = TRUE;
+         }
+     }
+     return $deleted;
 }

@@ -22,14 +22,15 @@
     <div class="page-container">
   
         <!-- top navbar -->
-        <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-light ">
             <a href="index.php" >
                 <img src="src/img/livre.png" alt="accueil" data-toggle="tooltip" title="Retour à l'accueil"/>
             </a>
+            <h1 class="mx-auto">La BDTek</h1>
         </nav>
         
         <div class="container-fluid">
           <div class="row row-offcanvas row-offcanvas-left">
                     
-            <?php if ($action != 'admin')
+            <?php
             include 'vues/sidebar.php'; ?>

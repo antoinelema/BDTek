@@ -27,6 +27,11 @@
        var_dump($_SESSION);
      }
      
+//     var_dump($_POST);
+     if (isset($_POST['oCom'])){ //si objet commentaire en parametre
+        $deleted = insertOrModifCom($_POST);// booleen pour savoir si le message a été suprimé ou valider
+     }
+     //dertermine action
     $action ='accueil';
     if (isset($_GET['action'])){
         $action = $_GET['action'];
@@ -37,10 +42,12 @@
         
     }
        
-    //img
+    
      $tOBds = BdManager::getAllOBd(); //tableau d'objet bd
+     //   var_dump($tOBds);
+     $tComsUnpublished = CommentairesManager::getAllOComUnpublished(); //tableau de comms non publié
+//     var_dump($tComsUnpublished);
 
-//   var_dump($tOBds);
      
      
      

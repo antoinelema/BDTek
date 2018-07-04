@@ -9,19 +9,20 @@ body{
 }
 
 #main {
-    color: white;
+    color: white; //couleur d'ecriture principale
 }
 
 
 /*navbar top*/
 nav{
-    border: 1px solid blue;
+    background-color: #e3f2fd;
 }
 
 .navbar h1{
+    color : darkcyan;
     margin-top:  7px;
     font-family: verdana;
-    font-size: 26px;
+    font-size: 36px;
 }
 .navbar  img{
   width: 28%;  
@@ -52,6 +53,7 @@ nav{
  /*centre*/
 #main{
     padding-top: 20px;
+    min-height: 880px;
 /*    border: 1px solid blue;*/
 }
 
@@ -194,6 +196,11 @@ nav{
  /*fin commentaires*/
  #postComm{
      margin-left: 1%;
+ }
+ 
+ /*ADMINISTRATION*/
+ .supprOrValid{
+     margin-left: 3%;
  }
 @media screen and (max-width: 1210px) {
     #imgConsultation{

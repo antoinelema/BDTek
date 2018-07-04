@@ -46,6 +46,7 @@ class BdManager {
         //close connection
         unset($conexion);
         
+        return $rs;
     }
     
     /**
@@ -121,5 +122,22 @@ class BdManager {
     }
     
     
+    
+    static function getOneOBd($bd_Id){
+        
+        try{
+            $resultat = BdManager::getOneBd($bd_Id);
+            $record = $resultat ->fetchAll();
+            extract($record[0]);
+            $tTheme = (BdManager::getOneBdTheme($bd_Id));
+
+            $bd = new BD($bd_Id, $auteur, $bdImg, $bdResume, $titre, $tTheme);
+        } catch (Exception $ex) {
+            echo($ex->getMessage());
+        }
+//        var_dump($bd);
+        
+        return($bd);
+    }
         
 }
