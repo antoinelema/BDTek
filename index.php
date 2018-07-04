@@ -4,7 +4,7 @@
  *Index du site, determine quelle fenetre afficher
  */
     //recuperation des parametres
-     require 'param/param.php';
+     require 'Param/param.php';
      
      //include 
     require 'DAO/ConnectionManager.dao.php';
