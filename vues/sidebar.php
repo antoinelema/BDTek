@@ -1,16 +1,15 @@
 <?php
 
-/* 
+/*
  * affiche l'authentification sur le coté gauche.
  */
 
 
 ?>
     <!-- sidebar -->
-               
+
                 <div class="col-2 " id="sidebar" role="navigation">
-                    <?php 
-//                    var_dump($_SESSION);
+                    <?php
                     if (isset($_SESSION) && (isset($_SESSION['adminCo']))){
                     ?>
                     <h3>Bonjour</h3>
@@ -29,7 +28,7 @@
                                 <input type="hidden" name="action" value="pageAdmin" />
                                 <a href="javascript:{}" onclick="document.getElementById('goToAdmin').submit();">Page admin</a>
                             </div>
-                        </div>    
+                        </div>
                     </form>
                     <form action="vues/pagedeco.php" method="POST">
                         <div class="form-row">
@@ -39,9 +38,9 @@
                                 <input type="submit" class="btn btn-primary form-control" value="Deconexion" />
                             </div>
                         </div>
-                        
+
                     </form>
-                    <?php 
+                    <?php
                     }else{
                     ?>
                     <form action="<?php $_PHP_SELF ?>" method="post">
@@ -50,7 +49,7 @@
                             <div class="col-11">
                                 <input type="text" class="form-control" placeholder="Identifiant" name="userLogin" required/>
                                 <input type="password" class="form-control" placeholder="password" name="userPassword" required/><br/>
-                                <?php 
+                                <?php
                                 if (isset($badpassword)){
                                     if ($badpassword){
                                 ?>
@@ -61,8 +60,8 @@
                                 ?>
                                 <input type="hidden" name="conexion" value="conexion" />
                                 <input type="submit" class="btn btn-primary form-control" value="Valider" />
-                            </div>    
-                        </div>    
+                            </div>
+                        </div>
                     </form>
                     <?php
                     }

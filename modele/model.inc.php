@@ -1,12 +1,12 @@
 <?php
-/* 
- * 
+/*
+ *
  */
 
 
 /**
  * deserialize un objet
- * @param string $serialisedO 
+ * @param string $serialisedO un objet serialisé
  * @return objet $o
  */
 function deserialise($serialisedO){
@@ -15,34 +15,34 @@ function deserialise($serialisedO){
     //var_dump($encodeObd);
 
     $o = unserialize($encodedO);
-    
+
     return $o;
 }
 
 /**
- * conexion a la session admin
+ * connexion a la session admin
  * @param array $post
  * @param string $login
  * @param string $password
  * @return boolean
  */
 function conexion($post,$login,$password){
-    
+
     if (isset($post['userLogin'])){
-        
+
         $userLogin = $post['userLogin'];
         $userPassword = $post['userPassword'];
-        
+
         if(($userLogin == $login)&&($userPassword == $password)){
             if (!(isset($_SESSION))){
                 session_start();
             }
-            
-            $_SESSION['adminCo'] = TRUE; //variable pour verifier si l'admin est conecté
+
+            $_SESSION['adminCo'] = TRUE; //variable pour verifier si l'admin est connecté
             return FALSE;
         }else{
             return TRUE; //si le mdp est mauvais retourne TRUE
-            
+
         }
     }
 }
