@@ -14,7 +14,7 @@
             if ($deleted == TRUE){
                 ?>
             <ul class="col-3 list-group ">
-                <li class="supprOrValid list-group-item list-group-item-danger">Le commentaire a bien été surppimé</li>
+                <li class="supprOrValid list-group-item list-group-item-danger">Le commentaire a bien été supprimé</li>
             </ul>
                 <?php
 
