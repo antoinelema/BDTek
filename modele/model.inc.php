@@ -100,3 +100,35 @@ function insertOrModifCom($postOCom){
      }
      return $deleted;
 }
+
+/**
+ * retourne la recherche de l'utilisateur sur : le titre , le theme, l'auteur
+ * @param string $search la recherche
+ * @param array() $table d'objet bd
+ * @return array() d'objet bd
+ */
+function recherche($search, $table){
+    $masqueE = array('é','è','ê');
+    $search = strtolower(str_replace($masqueE, 'e',$search));
+    $tableFound = array();
+    
+    foreach ($table as $bd) {
+        $strTheme="";
+        $auteur = str_replace($masqueE, 'e', $bd->getAuteur());
+        $titre = str_replace($masqueE, 'e',$bd->getBdTitre());
+        $tTheme = $bd ->getBdThemes();
+        foreach ($tTheme as $theme) {
+            $theme = str_replace($masqueE, 'e', $theme);
+            $strTheme .= ' '.$theme;
+        }
+        
+        $toSearch = (strtolower($auteur).' '.strtolower($titre).' '.($strTheme).' '); //transformation de l'objet en string
+        
+        if ((stripos ( $toSearch,($search)))!==FALSE){ //recherche
+            $tableFound[]= $bd;
+        }
+ 
+    } 
+
+    return $tableFound;
+}

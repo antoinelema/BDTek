@@ -22,8 +22,12 @@ $tThemes = $oBd->getBdThemes();
                     <div>
                         
                         <div class="row">
-                            <div class="col-md-5  order-md-2 " >
+                            <div class="col-md-5  order-md-2" id="bdSide">
                                 <img src="<?php echo $cheminImages.$oBd->getBdImg(); ?>" alt="<?php echo $oBd->getBdTitre(); ?>" id="imgConsultation">
+                                <div>
+                                    <h3>Auteur</h3>
+                                    <a href="index.php?search=<?php echo $oBd->getAuteur(); ?>"><p><?php echo $oBd->getAuteur(); ?></p></a>
+                                </div>
                                 <div id="resume" class="col-xs-12">
                                     <h3>Resumé</h3>
                                     <p><?php echo $oBd->getBdResume(); ?></p>
@@ -37,7 +41,7 @@ $tThemes = $oBd->getBdThemes();
                                     
                                     }else{
                                         foreach ($tThemes as $theme) {
-                                           $msg .= $theme.', ';
+                                           $msg .= '<a href="index.php?search='. $theme.'">'.$theme.'</a>'.', ';
                                         }
                                         $msg =  ucfirst (substr($msg, 0, -2).'.');
                                     }

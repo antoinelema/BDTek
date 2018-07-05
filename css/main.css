@@ -193,6 +193,11 @@ nav{
 .insertcom{
     border: 1px solid white;
 }
+
+#bdSide a{
+    color: white;
+    text-decoration: underline;
+}
  /*fin commentaires*/
  #postComm{
      margin-left: 1%;

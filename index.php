@@ -48,9 +48,11 @@
 //     var_dump($tComsUnpublished);
 
 
+    if (isset($_GET['search'])and($_GET['search'])!=""){ //appel de la fonction recherche
+        $tOBds = recherche($_GET['search'],$tOBds);
+    }
 
-
-     if (isset($_POST)){
+     if (isset($_POST)){ //appel de la fonction conexion
          if (isset($_POST['conexion'])){
              if (($_POST['conexion']== 'conexion')){
                   $badpassword = conexion($_POST,$login,$password);
